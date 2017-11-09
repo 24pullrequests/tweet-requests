@@ -1,4 +1,5 @@
 # frozen_string_literal: true
+
 require 'yaml'
 
 # load all tweets from tweets.yml
