@@ -21,7 +21,7 @@ module TweetRequests
       load_yaml['tweets'].map{|tweet_yaml| new(tweet_yaml) }
     end
 
-    def load_yaml
+    def self.load_yaml
       YAML.load_file('tweets.yml')
     end
   end
