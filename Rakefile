@@ -1,5 +1,11 @@
 #!/usr/bin/env rake
 
+begin
+  require 'rspec/core/rake_task'
+  RSpec::Core::RakeTask.new(:spec)
+rescue LoadError
+end
+
 require './lib/tweet_requests/client'
 require './lib/tweet_requests/tweet'
 
@@ -13,5 +19,3 @@ task :send_current_tweets do
                                 access_secret: ENV['ACCESS_SECRET'])
   tw.send_current_tweets
 end
-
-# task to test things
